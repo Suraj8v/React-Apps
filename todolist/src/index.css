@@ -1,6 +1,7 @@
-.todoinput{
+header{
   display: flex;
   justify-content: center;
+  align-items: stretch;
   
   padding-top: 20px;
   height: 40px;
@@ -36,6 +37,7 @@ header input{
   box-shadow: 1px 4px 2px grey;
   flex:1;
   border: none;
+  
 }
 
 .todoItem{
@@ -57,4 +59,9 @@ header input{
   padding: 14px;
   background: #eff6ff;
   gap: 14px;
+}
+
+i{
+  margin-left: 10px;
+  cursor: pointer;
 }
