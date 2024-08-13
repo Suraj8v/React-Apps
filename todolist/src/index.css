@@ -1,0 +1,60 @@
+.todoinput{
+  display: flex;
+  justify-content: center;
+  
+  padding-top: 20px;
+  height: 40px;
+}
+
+header button{
+  margin-left: 15px;
+  border-radius: 10px;
+  width: 60px;
+  font-size: 20px;
+  font-variant: small-caps;
+  color: rgb(255, 255, 255);
+  background-color: brown;
+  box-shadow: 1px 4px 2px grey;
+  cursor: pointer;
+  border: none;
+}
+  
+ 
+
+
+::placeholder {
+  color: rgb(0, 0, 0);
+  padding: 50px;
+  font-size: 15px;
+  font-variant: small-caps;
+  background-color: rgb(247, 247, 238);
+
+}
+
+header input{
+  border-radius: 10px;
+  box-shadow: 1px 4px 2px grey;
+  flex:1;
+  border: none;
+}
+
+.todoItem{
+  display: flex;
+  align-items: center;
+  padding: 14px;
+  border-radius: 14px;
+  margin: 10px;
+  background-color: bisque;
+  font-family: 'Courier New', Courier, monospace;
+
+  
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 14px;
+  background: #eff6ff;
+  gap: 14px;
+}
