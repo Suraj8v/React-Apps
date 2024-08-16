@@ -2,11 +2,9 @@ import TodoList from "./components/TodoList"
 import TodoInput from "./components/TodoInput"
 
 function App() {
-
-
   return (
     <>
-    <TodoInput></TodoInput>
+      <TodoInput></TodoInput>
       <TodoList></TodoList>
     </>
   )

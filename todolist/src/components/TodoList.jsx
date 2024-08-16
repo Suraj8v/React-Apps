@@ -3,11 +3,10 @@ import TodoCard from './TodoCard'
 
 export default function TodoList()
 {
-
     let todos = ["go to the gym", "go to the office"]
    
     return (
-        <ul>
+        <div>
             {todos.map((todo,todoIndex)=>
             {
                 return(
@@ -18,6 +17,8 @@ export default function TodoList()
                     </div>
                 )
             })}
-        </ul>
+        </div>
     )
 }
+
+
