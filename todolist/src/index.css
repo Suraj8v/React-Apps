@@ -61,7 +61,13 @@ header input{
   gap: 14px;
 }
 
-i{
-  margin-left: 15px;
-  cursor: pointer;
+li button {
+ 
+  background : bisque;
+  border : none;
+  cursor : pointer
+}
+
+.actionsContainer{
+   margin-left : 20px;
 }
