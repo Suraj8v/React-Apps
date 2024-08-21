@@ -8,7 +8,7 @@ function App() {
     
     <div className="app">
 
-      <div className="boxx">    <Weather/>
+      <div><Weather/>
       </div>
      
     </div>
