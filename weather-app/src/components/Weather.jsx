@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import searchbar from '../assets/search-bar-01.png' 
-import sun from '../assets/sun.png' 
 import humidity from '../assets/humidity.png' 
 import wind from '../assets/wind.png' 
 import clear_sky from '../assets/clear-sky.png'
@@ -11,7 +10,11 @@ import cloud from '../assets/clouds.png'
 
 function Weather()
 {
+        const inputRef = useRef('')
+
         const [weatherData,setWeatherData] = useState(false);
+        const [city, setCity] = useState("")
+
         const allIcons = {
             "01d": clear_sky,
             "01n": clear_sky,
@@ -30,12 +33,23 @@ function Weather()
 
 
         const search = async(city)=>{
+
+            if(city==="")
+            {
+                alert("Enter city name!")
+            }
             try{
-                const url = `https://api.openweathermap.org/data/2.5/
-                weather?q=${city}&units=metric&appid=${import.meta.env.VITE_APP_ID}`;
+                const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${import.meta.env.VITE_APP_ID}`;
     
                 const response = await fetch(url)
                 const data = await response.json()
+
+                if(response.status===404)
+                    {
+                        alert("Invalid city name!")
+                    }         
+                    
+
                 console.log(data)
                 const icon = allIcons[data.weather[0].icon] || clear_sky;
                 setWeatherData({
@@ -46,21 +60,21 @@ function Weather()
                     icon: icon
                     
                 })
+               setCity("")
             }catch(error){
-    
-            }
+                
+               }
         }
     
-    
     useEffect(()=>{
-        search("Pune")
+        search("delhi")
     },[])
 
     return(
         <div className="weather">
         <div className="search-bar">
-            <input type="text" placeholder="search..."/> 
-            <img src={searchbar} alt="" />
+            <input value={city} onChange={(e)=> setCity(e.target.value)} type="text" placeholder="search..."/> 
+            <img src={searchbar} alt="" onClick={()=>search(city) } />
         </div>
        
        <img src={weatherData.icon} alt="" className="weather-icon"/>

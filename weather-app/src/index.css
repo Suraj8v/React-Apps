@@ -87,6 +87,7 @@ margin: 0px;
   align-items: flex-start;
   gap: 12px;
   font-size: 22px;
+  margin: 30px 0;
 }
 
 .weather-data span{
